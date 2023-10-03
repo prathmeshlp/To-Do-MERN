@@ -12,7 +12,12 @@ const app = express();
 
 // middleware
 app.use(express.json());
-app.use(cors())
+const corsOptions = {
+  origin: 'https://to-do-app-with-auth.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // If you need to include cookies in your requests
+};
+app.use(cors(corsOptions))
 
 app.use("/", UserRoutes);
 app.use("/api", ToDoRoutes);
