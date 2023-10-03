@@ -20,13 +20,6 @@ app.use("/", UserRoutes);
 app.use("/api", ToDoRoutes);
 
 
-app.get('*',(req,res,next)=>{
-  res.status(200).json({
-    message:'bad request'
-  })
-})
-
-
 // connect to mongoDB
 mongoose
   .connect(config.MONGODB_URL,{
