@@ -8,8 +8,9 @@ function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  axios.defaults.withCredentials=true;
 
-  const apiUrl = "https://to-do-app-three-kappa.vercel.app";
+  const apiUrl = "https://todoapi-zeta.vercel.app";
 
   //   useEffect(() => {
   //

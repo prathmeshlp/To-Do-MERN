@@ -2,13 +2,14 @@ import axios from "axios";
 import React, { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 
-
 const Popup = ({ setShowPopup, popupContent, setUpdateUI }) => {
   const [input, setInput] = useState(popupContent.text);
-
+  axios.defaults.withCredentials = true;
   const updateToDo = () => {
     axios
-      .put(`https://to-do-app-three-kappa.vercel.app/api/update/${popupContent.id}`, { toDo: input })
+      .put(`https://todoapi-zeta.vercel.app//api/update/${popupContent.id}`, {
+        toDo: input,
+      })
       .then((res) => {
         console.log(res.data);
         setUpdateUI((prevState) => !prevState);

@@ -8,6 +8,7 @@ function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate();
+    axios.defaults.withCredentials=true;
 
     // useEffect(() => {
     //     fetchUsers();
@@ -30,7 +31,7 @@ function Login() {
         event.preventDefault();
         try {
             const response = await axios
-            .post('https://to-do-app-three-kappa.vercel.app/login', { username, password })
+            .post('https://todoapi-zeta.vercel.app/login', { username, password })
             const token = response.data.token
             alert('Login successful')
             setUsername('')
