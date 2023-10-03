@@ -8,8 +8,7 @@ function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate();
-    axios.defaults.withCredentials=true;
-
+    const apiurl="http://localhost:3001"
     // useEffect(() => {
     //     fetchUsers();
     //     console.log("Fetch users useeffect");
@@ -31,7 +30,7 @@ function Login() {
         event.preventDefault();
         try {
             const response = await axios
-            .post('https://todoapi-zeta.vercel.app/login', { username, password })
+            .post(`${apiurl}/login`, { username, password })
             const token = response.data.token
             alert('Login successful')
             setUsername('')

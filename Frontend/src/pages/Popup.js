@@ -5,9 +5,10 @@ import { RxCross1 } from "react-icons/rx";
 const Popup = ({ setShowPopup, popupContent, setUpdateUI }) => {
   const [input, setInput] = useState(popupContent.text);
   axios.defaults.withCredentials = true;
+  const apiurl="http://localhost:3001"
   const updateToDo = () => {
     axios
-      .put(`https://todoapi-zeta.vercel.app//api/update/${popupContent.id}`, {
+      .put(`${apiurl}/api/update/${popupContent.id}`, {
         toDo: input,
       })
       .then((res) => {

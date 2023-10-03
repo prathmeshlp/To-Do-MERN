@@ -8,10 +8,9 @@ function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
-  axios.defaults.withCredentials=true;
+  
 
-  const apiUrl = "https://todoapi-zeta.vercel.app";
-
+  const apiurl="http://localhost:3001"
   //   useEffect(() => {
   //
   //   }, []);
@@ -28,7 +27,7 @@ function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post(`${apiUrl}/register`, { email, username, password })
+      .post(`${apiurl}/register`, { email, username, password })
       .then(() => {
         alert("Registration Successful");
         setEmail("");

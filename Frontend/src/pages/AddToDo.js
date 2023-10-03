@@ -10,11 +10,12 @@ const AddToDo = () => {
   const [updateUI, setUpdateUI] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [popupContent, setPopupContent] = useState({});
-  axios.defaults.withCredentials=true;
+  
+ const apiurl="http://localhost:3001"
 
   useEffect(() => {
     axios
-      .get(`https://todoapi-zeta.vercel.app/api/get`)
+      .get(`${apiurl}/api/get`)
       .then((res) => {
       console.log(res)
       setToDos(res.data)})
@@ -23,7 +24,7 @@ const AddToDo = () => {
 
   const saveToDo = () => {
     axios
-      .post(`https://todoapi-zeta.vercel.app/api/save`, { toDo: input })
+      .post(`${apiurl}/api/save`, { toDo: input })
       .then((res) => {
         console.log(res.data);
         setUpdateUI((prevState) => !prevState);

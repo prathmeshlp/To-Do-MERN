@@ -9,10 +9,11 @@ const UserRoutes = require('./routes/UserRoutes')
 const app = express();
 
 // middleware
-app.use(cors)
+app.use(cors());
 app.use(express.json());
 app.use("/", UserRoutes);
 app.use("/api", ToDoRoutes);
+
 
 
 // connect to mongoDB
@@ -24,7 +25,7 @@ mongoose
   .then(() => console.log("MongoDB connected..."))
   .catch((err) => console.log(err));
 
+  
   app.listen(config.PORT, () => console.log(`Listening at ${config.PORT}...`));
-
 
 
