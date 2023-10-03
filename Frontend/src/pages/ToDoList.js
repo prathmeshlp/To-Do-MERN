@@ -6,7 +6,7 @@ import { RxCross1 } from "react-icons/rx";
 
 const ToDoList = ({ text, id, setUpdateUI, setShowPopup, setPopupContent }) => {
   const deleteTodo = () => {
-    axios.delete(`http://localhost:3001/api/delete/${id}`).then((res) => {
+    axios.delete(`https://to-do-app-three-kappa.vercel.app/api/delete/${id}`).then((res) => {
       console.log(res.data);
       setUpdateUI((prevState) => !prevState);
     });

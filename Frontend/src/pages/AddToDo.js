@@ -13,7 +13,7 @@ const AddToDo = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:3001/api/get`)
+      .get(`https://to-do-app-three-kappa.vercel.app/api/get`)
       .then((res) => {
       console.log(res)
       setToDos(res.data)})
@@ -22,7 +22,7 @@ const AddToDo = () => {
 
   const saveToDo = () => {
     axios
-      .post(`http://localhost:3001/api/save`, { toDo: input })
+      .post(`https://to-do-app-three-kappa.vercel.app/api/save`, { toDo: input })
       .then((res) => {
         console.log(res.data);
         setUpdateUI((prevState) => !prevState);

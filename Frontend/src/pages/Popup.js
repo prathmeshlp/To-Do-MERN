@@ -8,7 +8,7 @@ const Popup = ({ setShowPopup, popupContent, setUpdateUI }) => {
 
   const updateToDo = () => {
     axios
-      .put(`http://localhost:3001/api/update/${popupContent.id}`, { toDo: input })
+      .put(`https://to-do-app-three-kappa.vercel.app/api/update/${popupContent.id}`, { toDo: input })
       .then((res) => {
         console.log(res.data);
         setUpdateUI((prevState) => !prevState);

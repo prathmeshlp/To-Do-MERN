@@ -9,7 +9,7 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const apiUrl = "http://localhost:3001";
+  const apiUrl = "https://to-do-app-three-kappa.vercel.app";
 
   //   useEffect(() => {
   //
