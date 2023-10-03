@@ -9,13 +9,8 @@ const UserRoutes = require('./routes/UserRoutes')
 const app = express();
 
 // middleware
+app.use(cors)
 app.use(express.json());
-
-app.use(cors,{
-  origin: ['https://todoclient-seven.vercel.app'],
-  methods: ["GET","HEAD","PUT","PATCH","POST","DELETE"],
-  credentials: true, // If you need to include cookies in your requests
-})
 app.use("/", UserRoutes);
 app.use("/api", ToDoRoutes);
 
