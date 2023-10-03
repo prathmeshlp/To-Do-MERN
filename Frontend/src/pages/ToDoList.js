@@ -6,7 +6,6 @@ import { RxCross1 } from "react-icons/rx";
 
 const ToDoList = ({ text, id, setUpdateUI, setShowPopup, setPopupContent }) => {
 
-  axios.defaults.withCredentials=true;
   const apiurl="http://localhost:3001"
 
   const deleteTodo = () => {

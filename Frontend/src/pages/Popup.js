@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
 
 const Popup = ({ setShowPopup, popupContent, setUpdateUI }) => {
+  console.log(popupContent,"popupContent");
   const [input, setInput] = useState(popupContent.text);
-  axios.defaults.withCredentials = true;
   const apiurl="http://localhost:3001"
   const updateToDo = () => {
     axios
@@ -15,7 +15,10 @@ const Popup = ({ setShowPopup, popupContent, setUpdateUI }) => {
         console.log(res.data);
         setUpdateUI((prevState) => !prevState);
         setShowPopup(false);
-      });
+      }).catch((error) => {
+        // Handle any errors that occur during the request
+        console.error("Error updating to-do:", error);
+      });;
   };
 
   return (

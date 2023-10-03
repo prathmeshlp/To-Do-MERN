@@ -21,6 +21,8 @@ module.exports.saveToDo = (req, res) => {
 };
 
 module.exports.updateToDo = (req, res) => {
+  console.log(req.params);
+  console.log(req.body);
   const { id } = req.params;
   const { toDo } = req.body;
 
