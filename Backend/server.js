@@ -10,6 +10,7 @@ const app = express();
 
 const corsOptions = {
   origin: 'https://todo-client-ten-beta.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE']
 };
 
 // middleware
