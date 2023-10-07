@@ -6,7 +6,7 @@ import { RxCross1 } from "react-icons/rx";
 
 const ToDoList = ({ text, id, setUpdateUI, setShowPopup, setPopupContent }) => {
 
-  const apiurl="http://localhost:3001"
+  const apiurl="https://todo-server-theta-ten.vercel.app"
 
   const deleteTodo = () => {
     axios.delete(`${apiurl}/api/delete/${id}`).then((res) => {

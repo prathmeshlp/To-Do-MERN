@@ -10,7 +10,7 @@ function SignUp() {
   const navigate = useNavigate();
   
 
-  const apiurl="http://localhost:3001"
+  const apiurl="https://todo-server-theta-ten.vercel.app"
   //   useEffect(() => {
   //
   //   }, []);

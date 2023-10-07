@@ -8,7 +8,7 @@ function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate();
-    const apiurl="http://localhost:3001"
+    const apiurl="https://todo-server-theta-ten.vercel.app"
     // useEffect(() => {
     //     fetchUsers();
     //     console.log("Fetch users useeffect");

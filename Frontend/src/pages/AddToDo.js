@@ -11,7 +11,7 @@ const AddToDo = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupContent, setPopupContent] = useState({});
   
- const apiurl= "http://localhost:3001"
+ const apiurl= "https://todo-server-theta-ten.vercel.app"
 
   useEffect(() => {
     axios
