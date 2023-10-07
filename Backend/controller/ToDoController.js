@@ -6,7 +6,7 @@ module.exports.getToDos = async (req, res) => {
 };
 
 module.exports.saveToDo = (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   const { toDo } = req.body;
 
   ToDoModel.create({ toDo })
@@ -21,8 +21,8 @@ module.exports.saveToDo = (req, res) => {
 };
 
 module.exports.updateToDo = (req, res) => {
-  console.log(req.params);
-  console.log(req.body);
+  // console.log(req.params);
+  // console.log(req.body);
   const { id } = req.params;
   const { toDo } = req.body;
 

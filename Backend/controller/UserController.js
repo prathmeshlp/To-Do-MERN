@@ -33,7 +33,7 @@ module.exports.getRegisteredUsers = async (req, res) => {
 module.exports.LoginUser =  async (req, res) => {
     try {
         const { username, password } = req.body
-        console.log(req.body);
+        // console.log(req.body);
         const user = await userModel.findOne({ username })
         if (!user) {
             return res.status(401).json({ error: 'Invalid credentials'})
