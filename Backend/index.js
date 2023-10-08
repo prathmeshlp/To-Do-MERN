@@ -10,16 +10,17 @@ require('dotenv').config();
 // connect to express app
 const app = express();
 
-const corsOptions = {
-  origin: 'https://todo-client-dusky.vercel.app',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true, // This allows cookies to be sent along with the request (if applicable)
-  optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 204
-};
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://todo-client-dusky.vercel.app');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, Authorization');
+  res.header('Access-Control-Allow-Credentials', true);
+  next();
+});
+
 
 // middleware
 app.use(express.json());
-app.use(cors(corsOptions));
 app.use("/", UserRoutes);
 app.use("/api", ToDoRoutes);
 
