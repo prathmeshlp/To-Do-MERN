@@ -11,8 +11,10 @@ require('dotenv').config();
 const app = express();
 
 const corsOptions = {
-  origin: 'https://todo-client-ten-beta.vercel.app',
-  methods: ['GET', 'POST', 'PUT', 'DELETE']
+  origin: 'https://todo-client-dusky.vercel.app',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // This allows cookies to be sent along with the request (if applicable)
+  optionsSuccessStatus: 204, // Some legacy browsers (IE11, various SmartTVs) choke on 204
 };
 
 // middleware
