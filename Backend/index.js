@@ -1,9 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose')
 const cors = require('cors')
-const config = require('./config')
 const ToDoRoutes = require("./routes/ToDoRoutes")
 const UserRoutes = require('./routes/UserRoutes')
+require('dotenv').config();
+
+
 
 // connect to express app
 const app = express();
@@ -23,7 +25,7 @@ app.use("/api", ToDoRoutes);
 
 // connect to mongoDB
 mongoose
-  .connect(config.MONGODB_URL,{
+  .connect(process.env.MONGODB_URL,{
     useNewUrlParser: true, 
     useUnifiedTopology: true
 })
@@ -31,6 +33,6 @@ mongoose
   .catch((err) => console.log(err));
 
   
-  app.listen(config.PORT, () => console.log(`Listening at ${config.PORT}...`));
+  app.listen(process.env.PORT, () => console.log(`Listening at ${process.env.PORT}...`));
 
 
