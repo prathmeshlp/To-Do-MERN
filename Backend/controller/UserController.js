@@ -34,7 +34,7 @@ module.exports.getRegisteredUsers = async (req, res) => {
 module.exports.LoginUser = async (req, res) => {
   try {
     const { username, password } = req.body;
-    console.log(req.body);
+    // console.log(req.body);
     const user = await userModel.findOne({ username });
     if (!user) {
       return res.status(401).json({ error: "Invalid credentials" });
@@ -43,7 +43,7 @@ module.exports.LoginUser = async (req, res) => {
     if (!isPasswordValid) {
       return res.status(401).json({ error: "Invalid credentials" });
     }
-    const token = jwt.sign({ userId: user._id }, config.SECRET_KEY, {
+    const token = jwt.sign({ userId: user._id }, process.env.SECRET_KEY, {
       expiresIn: "1hr",
     });
     res.json({ message: "Login successful", token: token });
