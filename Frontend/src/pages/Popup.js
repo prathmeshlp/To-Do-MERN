@@ -5,7 +5,7 @@ import { RxCross1 } from "react-icons/rx";
 const Popup = ({ setShowPopup, popupContent, setUpdateUI }) => {
   console.log(popupContent,"popupContent");
   const [input, setInput] = useState(popupContent.text);
-  const apiurl="https://todo-server-fawn.vercel.app"
+  const apiurl="https://to-do-server-psi.vercel.app"
   const updateToDo = () => {
     axios
       .put(`${apiurl}/api/update/${popupContent.id}`, {

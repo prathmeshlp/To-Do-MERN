@@ -10,7 +10,7 @@ function SignUp() {
   const navigate = useNavigate();
   
 
-  const apiurl="https://todo-server-fawn.vercel.app"
+  const apiurl="https://to-do-server-psi.vercel.app"
   //   useEffect(() => {
   //
   //   }, []);
