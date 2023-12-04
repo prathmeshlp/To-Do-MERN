@@ -31,6 +31,7 @@ function Login() {
         try {
             const response = await axios
             .post(`${apiurl}/login`, { username, password })
+            console.log(response)
             const token = response.data.token
             alert('Login successful')
             setUsername('')
