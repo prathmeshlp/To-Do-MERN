@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ToDoList from "./ToDoList";
 import axios from "axios";
 import Popup from "./Popup";
+import { apiURL } from "../Assets/api";
 
 
 const AddToDo = () => {
@@ -11,11 +12,11 @@ const AddToDo = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [popupContent, setPopupContent] = useState({});
   
- const apiurl= "https://to-do-server-psi.vercel.app"
+
 
   useEffect(() => {
     axios
-      .get(`${apiurl}/api/get`)
+      .get(`${apiURL}/api/get`)
       .then((res) => {
       console.log(res)
       setToDos(res.data)})
@@ -24,7 +25,7 @@ const AddToDo = () => {
 
   const saveToDo = () => {
     axios
-      .post(`${apiurl}/api/save`, { toDo: input })
+      .post(`${apiURL}/api/save`, { toDo: input })
       .then((res) => {
         console.log(res.data);
         setUpdateUI((prevState) => !prevState);

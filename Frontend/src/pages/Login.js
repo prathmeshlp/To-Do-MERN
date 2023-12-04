@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
+import { apiURL } from '../Assets/api'
 
 
 function Login() {
@@ -8,7 +9,7 @@ function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const navigate = useNavigate();
-    const apiurl="https://to-do-server-psi.vercel.app"
+ 
     // useEffect(() => {
     //     fetchUsers();
     //     console.log("Fetch users useeffect");
@@ -30,7 +31,7 @@ function Login() {
         event.preventDefault();
         try {
             const response = await axios
-            .post(`${apiurl}/login`, { username, password })
+            .post(`${apiURL}/login`, { username, password })
             console.log(response)
             const token = response.data.token
             alert('Login successful')

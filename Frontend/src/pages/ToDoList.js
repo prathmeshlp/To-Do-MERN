@@ -2,14 +2,14 @@ import axios from "axios";
 import React from "react";
 import { AiFillEdit } from "react-icons/ai";
 import { RxCross1 } from "react-icons/rx";
+import { apiURL } from "../Assets/api";
 
 
 const ToDoList = ({ text, id, setUpdateUI, setShowPopup, setPopupContent }) => {
 
-  const apiurl="https://to-do-server-psi.vercel.app"
 
   const deleteTodo = () => {
-    axios.delete(`${apiurl}/api/delete/${id}`).then((res) => {
+    axios.delete(`${apiURL}/api/delete/${id}`).then((res) => {
       console.log(res.data);
       setUpdateUI((prevState) => !prevState);
     });

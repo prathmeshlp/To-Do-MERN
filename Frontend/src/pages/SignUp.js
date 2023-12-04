@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { apiURL } from "../Assets/api";
 
 function SignUp() {
 //   const [users, setUsers] = useState([]);
@@ -10,7 +11,6 @@ function SignUp() {
   const navigate = useNavigate();
   
 
-  const apiurl="https://to-do-server-psi.vercel.app"
   //   useEffect(() => {
   //
   //   }, []);
@@ -27,7 +27,7 @@ function SignUp() {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post(`${apiurl}/register`, { email, username, password })
+      .post(`${apiURL}/register`, { email, username, password })
       .then(() => {
         alert("Registration Successful");
         setEmail("");

@@ -1,14 +1,14 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { RxCross1 } from "react-icons/rx";
+import { apiURL } from "../Assets/api";
 
 const Popup = ({ setShowPopup, popupContent, setUpdateUI }) => {
   console.log(popupContent,"popupContent");
   const [input, setInput] = useState(popupContent.text);
-  const apiurl="https://to-do-server-psi.vercel.app"
   const updateToDo = () => {
     axios
-      .put(`${apiurl}/api/update/${popupContent.id}`, {
+      .put(`${apiURL}/api/update/${popupContent.id}`, {
         toDo: input,
       })
       .then((res) => {
