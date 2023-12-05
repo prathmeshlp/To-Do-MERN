@@ -19,6 +19,8 @@ module.exports.RegisterUser = async (req, res) => {
   }
 };
 
+
+
 //GET Registered Users
 module.exports.getRegisteredUsers = async (req, res) => {
   try {
@@ -29,13 +31,14 @@ module.exports.getRegisteredUsers = async (req, res) => {
   }
 };
 
+
+//OPTIONS
+
+
 //LOGIN
 
 module.exports.LoginUser = async (req, res) => {
   try {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Methods", "POST");
-    res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
     const { username, password } = req.body;
     // console.log(req.body);
     const user = await userModel.findOne({ username });

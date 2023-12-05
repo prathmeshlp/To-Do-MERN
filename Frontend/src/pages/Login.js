@@ -28,10 +28,14 @@ function Login() {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`${apiURL}/login`, {
-        username: username,
-        password: password,
-      });
+      const response = await axios.post(
+        `${apiURL}/login`,
+        {
+          username: username,
+          password: password,
+        },
+        { withCredentials: true }
+      );
       console.log(response);
       const token = response.data.token;
       alert("Login successful");
