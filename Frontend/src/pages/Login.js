@@ -33,8 +33,7 @@ function Login() {
         {
           username: username,
           password: password,
-        },
-        { withCredentials: true }
+        }
       );
       console.log(response);
       const token = response.data.token;
