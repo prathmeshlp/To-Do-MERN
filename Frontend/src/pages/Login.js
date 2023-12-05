@@ -5,6 +5,7 @@ import { apiURL } from "../Assets/api";
 
 function Login() {
   // const [users, setUsers] = useState([])
+  console.log(apiURL,"APIurL")
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
@@ -28,10 +29,14 @@ function Login() {
   const handleLogin = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post(`${apiURL}/login`, {
-        username,
-        password,
-      });
+      const response = await axios.post(
+        `${apiURL}/login`,
+        {
+          username,
+          password,
+        },
+        { "Content-Type": "application/json" }
+      );
       console.log(response);
       const token = response.data.token;
       alert("Login successful");
