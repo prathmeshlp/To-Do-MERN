@@ -10,8 +10,11 @@ const app = express();
 
 // middleware
 app.use(
-  cors()
-);
+  cors({
+    origin: 'https://to-do-mern-client.vercel.app',
+    credentials: true,
+  }))
+
 app.use(express.json());
 
 //routes
@@ -19,7 +22,7 @@ app.get("/", (req, res) => {
   res.status(200).json({ message: "Hello World" });
 });
 
-app.options('/login', cors({ origin: 'https://to-do-mern-client.vercel.app' }))
+app.options('/login', cors())
 app.use("/", UserRoutes);
 app.use("/api", ToDoRoutes);
 
